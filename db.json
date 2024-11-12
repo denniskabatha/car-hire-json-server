@@ -1,38 +1,100 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "john_doe",
+      "img": "https://example.com/user1.jpg",
+      "name": "John Doe",
       "email": "john@example.com",
-      "password": "hashed_password_here",
+      "password": "hashed_password",
       "socialTokens": {
-        "google": "token_if_any",
-        "facebook": "token_if_any"
+        "google": "google_token",
+        "facebook": "facebook_token"
       },
-      "passwordRecovery": {
-        "token": "recovery_token",
-        "expiresAt": "2024-12-01T12:00:00Z"
-      }
+      "id": 1
+    },
+    {
+      "img": "https://example.com/user2.jpg",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "hashed_password",
+      "id": 2
     }
-  ]
-}
-{
+  ],
   "events": [
     {
-      "id": 1,
+      "img": "https://example.com/event1.jpg",
+      "name": "Project Kickoff Meeting",
+      "description": "Initial meeting with the project team to discuss goals.",
+      "date": "2024-11-15",
+      "time": "09:00",
+      "category": "work",
       "userId": 1,
-      "title": "Meeting with Client",
-      "description": "Project kickoff with the team",
-      "start": "2024-11-15T09:00:00Z",
-      "end": "2024-11-15T10:00:00Z",
+      "id": 1
+    },
+    {
+      "img": "https://example.com/event2.jpg",
+      "name": "Yoga Class",
+      "description": "Weekly yoga session for relaxation.",
+      "date": "2024-11-17",
+      "time": "18:00",
+      "category": "personal",
+      "userId": 1,
+      "id": 2
+    }
+  ],
+  "eventCategories": [
+    {
+      "name": "Work",
       "color": "#ff5733",
-      "isRecurring": true,
-      "recurrence": "weekly",
-      "reminder": {
-        "email": true,
-        "pushNotification": true,
-        "minutesBefore": 30
-      }
+      "id": 1
+    },
+    {
+      "name": "Personal",
+      "color": "#32cd32",
+      "id": 2
+    },
+    {
+      "name": "Fitness",
+      "color": "#1e90ff",
+      "id": 3
+    }
+  ],
+  "sharedCalendars": [
+    {
+      "calendarId": 1,
+      "ownerId": 1,
+      "sharedWith": [
+        {
+          "userId": 2,
+          "permissions": "view"
+        }
+      ]
+    }
+  ],
+  "reminders": [
+    {
+      "eventId": 1,
+      "userId": 1,
+      "type": "email",
+      "timeBefore": 30,
+      "id": 1
+    },
+    {
+      "eventId": 2,
+      "userId": 1,
+      "type": "pushNotification",
+      "timeBefore": 15,
+      "id": 2
+    }
+  ],
+  "settings": [
+    {
+      "userId": 1,
+      "theme": "dark",
+      "integrations": {
+        "googleCalendar": true,
+        "outlookCalendar": false
+      },
+      "id": 1
     }
   ]
 }
